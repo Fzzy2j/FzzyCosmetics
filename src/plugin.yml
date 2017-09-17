@@ -1,0 +1,11 @@
+name: FzzyCosmetics
+version: 1.0
+description: Cosmetics plugin
+author: Fzzy
+
+depend: [Vault]
+
+main: me.fzzy.vitalcosmetics.FzzyCosmetics
+commands:
+  vitaleffect:
+  ve:
