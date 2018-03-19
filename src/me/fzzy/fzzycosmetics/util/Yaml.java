@@ -1,4 +1,4 @@
-package me.fzzy.vitalcosmetics.util;
+package me.fzzy.fzzycosmetics.util;
 
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.configuration.file.YamlConfigurationOptions;

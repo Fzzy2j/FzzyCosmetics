@@ -1,6 +1,6 @@
-package me.fzzy.vitalcosmetics.util;
+package me.fzzy.fzzycosmetics.util;
 
-import me.fzzy.vitalcosmetics.FzzyCosmetics;
+import me.fzzy.fzzycosmetics.FzzyCosmetics;
 import org.bukkit.Color;
 import org.bukkit.FireworkEffect;
 import org.bukkit.Location;

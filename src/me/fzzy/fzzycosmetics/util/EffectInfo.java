@@ -1,8 +1,6 @@
-package me.fzzy.vitalcosmetics.util;
+package me.fzzy.fzzycosmetics.util;
 
-import org.bukkit.Color;
 import org.bukkit.Material;
-import org.bukkit.Particle;
 
 public class EffectInfo {
 

@@ -1,6 +1,6 @@
 package me.fzzy.fzzycosmetics;
 
-import me.fzzy.vitalcosmetics.util.Methods;
+import me.fzzy.fzzycosmetics.util.Methods;
 import org.bukkit.*;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
@@ -12,8 +12,6 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.material.Wool;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.Map;
 
 public class Menu implements Listener {

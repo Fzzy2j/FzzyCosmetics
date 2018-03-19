@@ -4,7 +4,7 @@ import me.fzzy.fzzycosmetics.Effect;
 import me.fzzy.fzzycosmetics.EffectType;
 import me.fzzy.fzzycosmetics.User;
 import me.fzzy.fzzycosmetics.FzzyCosmetics;
-import me.fzzy.vitalcosmetics.util.EffectInfo;
+import me.fzzy.fzzycosmetics.util.EffectInfo;
 import org.bukkit.Material;
 import org.bukkit.Particle;
 import org.bukkit.entity.Player;

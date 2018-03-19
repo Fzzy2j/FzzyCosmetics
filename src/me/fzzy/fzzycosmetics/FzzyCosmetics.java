@@ -2,7 +2,7 @@ package me.fzzy.fzzycosmetics;
 
 import me.fzzy.fzzycosmetics.effects.*;
 import me.fzzy.fzzycosmetics.listeners.PlayerQuitListener;
-import me.fzzy.vitalcosmetics.util.Yaml;
+import me.fzzy.fzzycosmetics.util.Yaml;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -69,6 +69,7 @@ public class FzzyCosmetics extends JavaPlugin {
         pm.registerEvents(new Charmer(), this);
         pm.registerEvents(new Witcher(), this);
         pm.registerEvents(new Grotto(), this);
+        pm.registerEvents(new CorkscrewFlight(), this);
 
         enabledEffects = new ArrayList<>(Arrays.asList(EffectType.values()));
         enabledEffects.remove(EffectType.FIZZY_FLIGHT);

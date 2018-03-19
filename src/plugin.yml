@@ -5,7 +5,7 @@ author: Fzzy
 
 depend: [Vault]
 
-main: me.fzzy.vitalcosmetics.FzzyCosmetics
+main: me.fzzy.fzzycosmetics.FzzyCosmetics
 commands:
   vitaleffect:
   ve:

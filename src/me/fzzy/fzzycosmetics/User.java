@@ -1,6 +1,6 @@
 package me.fzzy.fzzycosmetics;
 
-import me.fzzy.vitalcosmetics.util.Yaml;
+import me.fzzy.fzzycosmetics.util.Yaml;
 import org.bukkit.Bukkit;
 import org.bukkit.Color;
 import org.bukkit.OfflinePlayer;

@@ -1,7 +1,7 @@
 package me.fzzy.fzzycosmetics;
 
 import me.fzzy.fzzycosmetics.effects.*;
-import me.fzzy.vitalcosmetics.util.EffectInfo;
+import me.fzzy.fzzycosmetics.util.EffectInfo;
 import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.Particle;
@@ -23,7 +23,8 @@ public enum EffectType {
     ICED(Iced.getEffectInfo()),
     CHARMER(Charmer.getEffectInfo()),
     WITCHER(Witcher.getEffectInfo()),
-    GROTTO(Grotto.getEffectInfo());
+    GROTTO(Grotto.getEffectInfo()),
+    CORKSCREW_FLIGHT(CorkscrewFlight.getEffectInfo());
 
     private EffectInfo effect;
 

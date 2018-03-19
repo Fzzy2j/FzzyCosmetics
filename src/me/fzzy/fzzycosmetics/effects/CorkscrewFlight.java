@@ -15,47 +15,50 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerMoveEvent;
 
 import java.util.HashMap;
-import java.util.Random;
 import java.util.UUID;
 
-public class FizzyFlight implements Listener {
+public class CorkscrewFlight implements Listener {
 
     public static EffectInfo getEffectInfo() {
-        String configName = "fizzyflight";
-        return EffectInfo.createNewEffectInfo("Fizzy Flight",
+        String configName = "corkscrewflight";
+        return EffectInfo.createNewEffectInfo("Corkscrew Flight",
                 configName,
-                Material.PUMPKIN_SEEDS);
+                Material.WOOD);
     }
 
-    private HashMap<UUID, Location> prevLocations = new HashMap<>();
+    private static HashMap<UUID, Location> prevLocations = new HashMap<>();
+    private static HashMap<UUID, Double> playerDistances = new HashMap<>();
 
-    private Random r = new Random();
+    private double density = 0.1D;
 
     @EventHandler
     public void onMove(PlayerMoveEvent event) {
         Player player = event.getPlayer();
 
         User user = FzzyCosmetics.getUser(player);
-        if (user.hasEffect(EffectType.FIZZY_FLIGHT)) {
-            Effect effect = user.getEffect(EffectType.FIZZY_FLIGHT);
+        if (user.hasEffect(EffectType.CORKSCREW_FLIGHT)) {
+            Effect effect = user.getEffect(EffectType.CORKSCREW_FLIGHT);
             if (effect.isEnabled()) {
                 if (player.isGliding()) {
                     Location prevLocation = prevLocations.getOrDefault(player.getUniqueId(), event.getFrom());
+                    double distance = ((prevLocation.distance(event.getFrom()) * (Math.PI / 180)) * 20 + playerDistances.getOrDefault(player.getUniqueId(), 0D)) % (360 * (Math.PI / 180));
                     Location lookAt = Distance.lookAt(prevLocation, event.getFrom());
                     double yaw = -lookAt.getYaw();
                     double pitch = lookAt.getPitch() + 90;
-                    double powerFactor = 0.5;
-                    for (int i = 0; i < 360; i += 10) {
-                        double x = 1;
-                        double y = r.nextInt(200) / 100D - 1;
-                        double z = 0;
+                    double powerFactor = 0.07;
+                    double x = 1;
+                    double y = 0;
+                    double z = 0;
 
-                        double[] rotate = rotateAroundY(x, y, z, i * (Math.PI / 180));
+                    for (int i = 0; i < 4; i++) {
+                        double add = Math.toRadians(i * (360 / 4));
+                        double[] rotate = rotateAroundY(x, y, z, (distance + add));
                         rotate = rotateAroundZ(rotate[0], rotate[1], rotate[2], pitch * (Math.PI / 180));
                         rotate = rotateAroundY(rotate[0], rotate[1], rotate[2], (yaw + 90) * (Math.PI / 180));
 
-                        player.getWorld().spawnParticle(Particle.WATER_WAKE, event.getFrom().clone().add(rotate[0] * powerFactor, rotate[1] * powerFactor, rotate[2] * powerFactor), 0);
+                        player.getWorld().spawnParticle(Particle.FIREWORKS_SPARK, event.getFrom(), 0, rotate[0] * powerFactor, rotate[1] * powerFactor, rotate[2] * powerFactor);
                     }
+                    playerDistances.put(player.getUniqueId(), distance);
                     prevLocations.put(player.getUniqueId(), event.getFrom());
                 } else {
                     if (prevLocations.containsKey(player.getUniqueId()))

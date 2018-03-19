@@ -1,4 +1,4 @@
-package me.fzzy.vitalcosmetics.util;
+package me.fzzy.fzzycosmetics.util;
 
 import java.util.ArrayList;
 
@@ -190,6 +190,33 @@ public class Distance {
         double z = Math.cos(pitch);
 
         for (int i = 1; i <= distance; i++) {
+            Location loc1 = new Location(loc.getWorld(), px + i * x, py + i * z, pz + i * y);
+            loclist.add(loc1);
+        }
+        return loclist;
+    }
+
+    public static ArrayList<Location> getLocationsBetweenLocations(Location loc, Location loc2, double offset, double interval) {
+
+        ArrayList<Location> loclist = new ArrayList<>();
+
+        int distance = (int) Math.floor(loc.distance(loc2));
+
+        loc = Distance.lookAt(loc, loc2);
+
+        double px = loc.getX();
+        double py = loc.getY();
+        double pz = loc.getZ();
+
+        double yaw = Math.toRadians(loc.getYaw() + 90);
+        double pitch = Math.toRadians(loc.getPitch() + 90);
+
+        double x = Math.sin(pitch) * Math.cos(yaw);
+        double y = Math.sin(pitch) * Math.sin(yaw);
+        double z = Math.cos(pitch);
+
+        loclist.add(loc);
+        for (double i = offset; i <= distance; i+=interval) {
             Location loc1 = new Location(loc.getWorld(), px + i * x, py + i * z, pz + i * y);
             loclist.add(loc1);
         }

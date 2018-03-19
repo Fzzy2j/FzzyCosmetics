@@ -4,9 +4,8 @@ import me.fzzy.fzzycosmetics.Effect;
 import me.fzzy.fzzycosmetics.EffectType;
 import me.fzzy.fzzycosmetics.User;
 import me.fzzy.fzzycosmetics.FzzyCosmetics;
-import me.fzzy.vitalcosmetics.util.Distance;
-import me.fzzy.vitalcosmetics.util.EffectInfo;
-import me.fzzy.vitalcosmetics.util.Yaml;
+import me.fzzy.fzzycosmetics.util.Distance;
+import me.fzzy.fzzycosmetics.util.EffectInfo;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Particle;
@@ -15,7 +14,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerMoveEvent;
 
-import java.io.File;
 import java.util.HashMap;
 import java.util.UUID;
 
